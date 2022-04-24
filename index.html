@@ -7,24 +7,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <!-- Tiny Slider -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    
 </head>
 
-<style>
-    .carousel-card {
-        border: 1px solid magenta;
-    }
-
-</style>
-
 <body>
-    <div style="border: 1px solid red" class="container">
-        <div id="carousel-row" class="row">
+    <style>
+        .tns-slider-wrapper {
+            padding-left: 1em;
+            padding-right: 1em;
+        }
+
+        .item-title {
+            text-align: center;
+            margin-top: 0.8em;
+        }
+
+        .tns-slider a {
+            all: unset;
+        }
+
+        .item-image:hover {
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.212));
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.212));
+        }
+
+        .tns-slider-wrapper .prev,
+        .tns-slider-wrapper .next {
+            position: absolute;
+            top: 6em;
+            padding: 12px 3px;
+            height: 50px;
+            background-color: rgb(201, 201, 201);
+            border-radius: 5px;
+        }
+
+        .tns-slider-wrapper .prev:hover,
+        .tns-slider-wrapper .next:hover {
+            background-color: rgb(143, 143, 143);
+        }
+
+        .tns-slider-wrapper .prev {
+            left: 1em;
+        }
+
+        .tns-slider-wrapper .next {
+            right: 1em;
+        }
+    </style>
+
+    <div class="row">
+        <div class="col">
+            <div class="tns-slider-wrapper">
+                <div class="controls" id="custom-controls">
+                    <div class="prev">
+                        &larr;
+                    </div>
+                    <div class="next">
+                        &rarr;
+                    </div>
+                </div>
+                <div class="tns-slider"></div>
+            </div>
         </div>
     </div>
+
+
+    <script>
+        window.cItems = [
+            {
+                imageLink: 'https://candy-message.de/thumbnail/f5/72/f9/1612111036/LM_ThankYou_E_002_400x400.png',
+                title: 'title',
+                link: 'https://candy-message.de'
+            },
+            {
+                imageLink: 'https://candy-message.de/thumbnail/f5/72/f9/1612111036/LM_ThankYou_E_002_400x400.png',
+                title: 'title',
+                link: 'https://candy-message.de'
+            },
+            {
+                imageLink: 'https://candy-message.de/thumbnail/f5/72/f9/1612111036/LM_ThankYou_E_002_400x400.png',
+                title: 'title',
+                link: 'https://candy-message.de'
+            },
+            {
+                imageLink: 'https://candy-message.de/thumbnail/f5/72/f9/1612111036/LM_ThankYou_E_002_400x400.png',
+                title: 'title',
+                link: 'https://candy-message.de'
+            },
+            {
+                imageLink: 'https://candy-message.de/thumbnail/f5/72/f9/1612111036/LM_ThankYou_E_002_400x400.png',
+                title: 'title',
+                link: 'https://candy-message.de'
+            },
+            {
+                imageLink: 'https://candy-message.de/thumbnail/f5/72/f9/1612111036/LM_ThankYou_E_002_400x400.png',
+                title: 'title',
+                link: 'https://candy-message.de'
+            },
+            {
+                imageLink: 'https://candy-message.de/thumbnail/f5/72/f9/1612111036/LM_ThankYou_E_002_400x400.png',
+                title: 'title',
+                link: 'https://candy-message.de'
+            }
+        ];
+
+        window.sliderOptions = {
+            container: '.tns-slider',
+            autoplay: true,
+            lazyload: true,
+            nav: false,
+            autoplayButtonOutput: false,
+            controlsContainer: '#custom-controls',
+            items: 1,
+            gutter: 20,
+            responsive: {
+                500: {
+                    items: 2
+                },
+                700: {
+                    items: 3
+                },
+                900: {
+                    items: 5
+                },
+                1100: {
+                    items: 6
+                }
+            }
+        }
+    </script>
+
+    <!-- copy main.js content into the js field  -->
+    <script src="dist/main.js"></script>
 </body>
 
-
-<script src="dist/main.js"></script>
 </html>
